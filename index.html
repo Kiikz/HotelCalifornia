@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Kiikz Gaming Registration</title>
+<!--     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We' crossorigin='anonymous'>   
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> 
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> 
+  <link rel="stylesheet" href = 'css/style.css'>
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, textarea, label, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      position: relative;
+      margin: 0;
+      font-size: 40px;
+      color: #ffffff;
+      z-index: 2;
+      line-height: 83px;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 8px  #669999; 
+      }
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      input[type="date"] {
+      padding: 4px 5px;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color:  #669999;
+      }
+      .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 3px 0  #669999;
+      color: #669999;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .item span {
+      color: red;
+      }
+      .week {
+      display:flex;
+      justfiy-content:space-between;
+      }
+      .colums {
+      display:flex;
+      justify-content:space-between;
+      flex-direction:row;
+      flex-wrap:wrap;
+      }
+      .colums div {
+      width:48%;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color:  #9b04a0;
+      }
+      .item i {
+      right: 1%;
+      top: 30px;
+      z-index: 1;
+      }
+      input[type=radio], input[type=checkbox]  {
+      display: none;
+      }
+      label.radio {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 15px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      .question-answer label {
+      display: block;
+      }
+      label.radio:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      }
+      input[type=radio]:checked + label:before, label.radio:hover:before {
+      border: 2px solid  #669999;
+      }
+      label.radio:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      width: 8px;
+      height: 4px;
+      border: 3px solid  #669999;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after {
+      opacity: 1;
+      }
+      .flax {
+      display:flex;
+      justify-content:space-around;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background:  #669999;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background:  #a3c2c2;
+      }
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .name-item div {
+      width: calc(50% - 20px);
+      }
+      .name-item div input {
+      width:97%;}
+      .name-item div label {
+      display:block;
+      padding-bottom:5px;
+      }
+      }
+    </style>
+  
+   
+ <div class="jumbotron row">
+  <h1 class="display-5">Join Kiikz Gaming LLC Today!</h1>
+  <hr class="my-1">
+  <h5 id = description>Please fill out the form below to secure an interview with our team!</br></h5>
+</div>
+  
+<!-- split divs into columns -->
+    
+        </div>
+        <div class="colums">
+          <div class="item">
+            <label for="fname"> Name: </label>
+            <input id="fname" type="text" name="fname" required/>
+          </div>
+          <div class="item">
+            <label for="lname"> Email: </label>
+            <input id="lname" type="text" name="lname" required/>
+          </div>
+          <div class="item">
+                    Create a password: 
+        <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+        <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+          </div>
+          <div class="item">
+             <label>Phone Number: <input type="number" name="phone" size="30" maxlength="100"></label><br/>
+          </div>
+          <div class="item">
+            <label> What day and time would you like to tryout? (Alll times are CST, click the calendar icon for help.) <input type="datetime-local"></label>
+          </div>
+          <div class="item">
+            <label for="try-date">What game are you trying out for?</label> <br>
+            <select name="game" id="try-date">
+              <optgroup label="Shooters">
+						  <option value="Call of Duty">Call of Duty</option>
+						  <option value="Valorant">Valorant</option>
+						  <option value="Fortnite">Fortnite</option>
+						  <option value="CSGO">CSGO</option>
+          </optgroup>
+          <optgroup label="Others">
+            <option value="Minecraft">Minecraft</option>
+						<option value="SuperSmash">Super Smash Bros.</option>
+          </optgroup>
+					</select>
+        </div> 
+        <div class="question">
+          <label>Please select the team role you're applying for!</label>
+          <div class="question-answer">
+            <div>
+              <input type="radio" value="none" id="radio_1" name="type"/>
+              <label for="radio_1" class="radio"><span>Captain</span></label>
+            </div>
+            <div>
+              <input  type="radio" value="none" id="radio_2" name="type"/>
+              <label for="radio_2" class="radio"><span>Member</span></label>
+            </div>
+            <div>
+              <input  type="radio" value="none" id="radio_3" name="type"/>
+              <label for="radio_3" class="radio"><span>Staff</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="question">
+          	<label for="comments">Comments:</label><br />
+					<textarea rows="3" cols="30" id="comments"></textarea>
+        </div>
+        <input type="checkbox" name="checkbox1">
+
+        <div class="btn-block">
+          <button type="submit" href="/">Submit</button>
+          <button type="reset" value="Clear form">Reset</button>
+        </div>
+      </form>
+    </div>
+
+<!-- footer -->
+  
+<footer class="footer">
+  <div class="container bottom_border">
+  <div class="row">
+  <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+  <h5 class="headin5_amrc col_white_amrc pt2">Team Info</h5>
+  <p class="mb10"> Kiikz Gaming is a professional gaming team. We play Call of Duty, Valorant and Fortnite!</p>
+  <p><i class="fa fa-location-arrow"></i> <a href="https://discord.gg/q4ukBCuy2x" target="_blank" Meet us on Discord!</p>
+  <a href="https://discord.gg/q4ukBCuy2x" target="_blank">Meet us on Discord!</a>
+  <p><i class="fa fa fa-envelope"></i> areach@una.edu </p>
+  
+  
+  </div>
+  
+  
+  <div class=" col-sm-4 col-md  col-6 col">
+  <h5 class="headin5_amrc col_white_amrc pt2">My links</h5>
+  <ul class="footer_ul_amrc">
+  <li><a href="https://www.youtube.com/user/xxBallxZxx" target="_blank"> YouTube</a></li>
+  <li><a href="https://www.twitch.tv/itskiikz" target="_blank">Twitch</a></li>
+  <li><a href="https://www.instagram.com/austin_reach9/" target="_blank">Instagram</a></li>
+  <li><a href="https://github.com/Kiikz" target="_blank">Our GitHub</a></li>
+  </ul>
+  </div>
+  
+  
+  <div class=" col-sm-4 col-md  col-6 col">
+  <h5 class="headin5_amrc col_white_amrc pt2">Behind The Scenes</h5>
+  <ul class="footer_ul_amrc">
+    <!-- validator -->
+  <li><a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fvalidator.w3.org%2Fcheck%3Furi%3Dhttp%253A%252F%252Fbarrycumbie.github.io%252Flegendary-waddle%252Findex.html%26charset%3D%2528detect%2Bautomatically%2529%26doctype%3DInline%26group%3D0" target="_blank">Page Valididty</a></li> 
+  <br>
+  <!-- repo -->
+  <li><a href="https://github.com/Kiikz/HotelCali" target="_blank">See The Code</a></li>
+  <br>
+  </ul>
+  </div>
+  
+  
+  <div class="container">
+  <ul class="foote_bottom_ul_amrc">
+  
+  </ul>
+  <p class="text-center">Copyright @2021 | <a href="https://www.una.edu" target="_blank">University of North Alabama</a></p>
+  
+  <ul class="social_footer_ul">
+  </ul>
+  </div>
+  
+</footer>
+    <script src="scripts/eyeBall.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+  
+
+  
+  
